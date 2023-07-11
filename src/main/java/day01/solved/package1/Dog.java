@@ -40,6 +40,12 @@ public class Dog {
         // Create two Dog objects
         Dog dog1 = new Dog(true, "purple");
         Dog dog2 = new Dog(true, "blue");
+        Bicycle cyc = new Bicycle() ;
+        cyc.speedUp(10);
+        cyc.changeGear(3);
+        
+        
+        
 
         // Print the attributes of each Dog
         System.out.println("Dog 1:");
