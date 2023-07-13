@@ -49,7 +49,7 @@ class AccountConstrct {
 
             // create Account using Setter methods and Default constructor
             AccountConstrct acct1 = new AccountConstrct();
-            acct1.setAccNo("A101");
+            //acct1.setAccNo("A101");
             acct1.setName("Naresh");
             acct1.setBalance(1000);
 
