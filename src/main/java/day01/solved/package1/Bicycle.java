@@ -2,9 +2,6 @@
  * 
  */
 package day01.solved.package1;
-
-
-
 public class Bicycle {
 	private int speed = 0;
 	private int gear = 0;
