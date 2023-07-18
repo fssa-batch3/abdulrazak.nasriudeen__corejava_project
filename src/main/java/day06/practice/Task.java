@@ -29,7 +29,7 @@ public class Task {
         taskArr.add(tsk1);
         taskArr.add(tsk2);
         taskArr.add(tsk3);
-        for(Task i : taskArr){
+        for(Task i : taskArr){ 
             System.out.print(i.name + "  ");
             System.out.println(i.priority);
             System.out.println("----------------------------");

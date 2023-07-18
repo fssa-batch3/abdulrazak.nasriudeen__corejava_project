@@ -19,18 +19,15 @@ public class RemoveDuplicates {
         cities.add("Tamil Nadu");
         System.out.println(cities);
         List <String> sortedCity = new ArrayList<String>();
-
-        sortedCity.add(cities.get(0));
-
-        int k = 0 ;
         for(int i = 0 ; i<cities.size() ; i++){
             String chk  = cities.get(i);
-            if(sortedCity.contains(chk) == false){
+            if(!sortedCity.contains(chk)){
                 sortedCity.add(chk);
-                k++;
+
             }
         }
         System.out.println(sortedCity);
+
 
     }
 }

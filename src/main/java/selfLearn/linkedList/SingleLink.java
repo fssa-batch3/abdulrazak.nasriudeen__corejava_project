@@ -27,48 +27,28 @@ public class SingleLink{
         System.out.print(x.x);
 
     }
+    public static Node createNodes(int n , Scanner scan){
+        Node head = new Node(8);
+            Node temp = head ;
+        for(int i = 1 ; i<= n ; i++){
+            System.out.println("Enter the node of " + i);
+            int ab = scan.nextInt();
+            Node x =  new Node(ab);
+            temp.next = x ;
+            temp = temp.next;
+
+        }
+        return head;
+    }
 
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the number of nodes  : ");
         int n = scan.nextInt();
-        Node head = new Node();
-        Node temp = head ;
-        for(int i = 1 ;  i <= n ; i++){
-            System.out.println("Enter the value for node "+ i );
-            int a =  scan.nextInt();
-            if(i ==1){
-                head.x = a ;
-
-
-
-            }else{
-               Node temp2 = new Node(a);
-                temp.next = temp2;
-                head.next = temp;
-
-                temp = temp2 ;
-
-
-
-
-            }
-
-
-        }
-
-
-
-
-
-
-        //Node head = new Node(10);
-
-
+        Node head = createNodes(n,scan);
         print(head);
-        //System.out.println(head.next.x);
 
-    }
+}
 
 
 
