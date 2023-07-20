@@ -10,11 +10,14 @@ public class Task implements Comparable<Task> {
     private String name;
     private LocalDate deadline;
 
-    public Task(int id , String name ,LocalDate dead ){
+    private int priority;
+
+    public Task(int id , String name ,LocalDate dead , int prior ){
 
         this.id = id ;
         this.name = name;
         this.deadline = dead;
+        this.priority = prior;
     }
 
     @Override
@@ -23,17 +26,50 @@ public class Task implements Comparable<Task> {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", deadline=" + deadline +
+                ", priority=" + priority +
                 '}';
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+    public LocalDate getDeadline(){
+
+        return this.deadline;
+    }
+
+    public int getPriority() {
+        return this.priority;
+    }
+
+    public static void printTasks(List<Task> a){
+        for(int i = 0 ; i< a.size() ; i++){
+            System.out.println((a.get(i)).toString());
+
+
+        }
+
+
+    }
+    @Override
+    public int compareTo(Task o) {
+
+        int i = this.deadline.compareTo(o.deadline);
+        return i;
+    }
+
     public static void main(String[] args){
-        Task tsk1 = new Task(1,"Task1",LocalDate.of(2023,7,26));
-        Task tsk2 = new Task(2,"Task2",LocalDate.of(2023,7,25));
-        Task tsk3 = new Task(3,"Task3",LocalDate.of(2023,7,26));
-        Task tsk4 = new Task(4,"Task4",LocalDate.of(2023,7,20));
-        Task tsk5 = new Task(5,"Task5",LocalDate.of(2023,7,29));
-        Task tsk6 = new Task(7,"Task6",LocalDate.of(2023,7,27));
-        Task tsk7 = new Task(6,"Task7",LocalDate.of(2023,7,26));
+        Task tsk1 = new Task(1,"Task1",LocalDate.of(2023,7,26),5);
+        Task tsk2 = new Task(2,"Task2",LocalDate.of(2023,7,25),2);
+        Task tsk3 = new Task(3,"Task3",LocalDate.of(2023,7,26),6);
+        Task tsk4 = new Task(4,"Task4",LocalDate.of(2023,7,20),8);
+        Task tsk5 = new Task(5,"Task5",LocalDate.of(2023,7,29),9);
+        Task tsk6 = new Task(7,"Task6",LocalDate.of(2023,7,27),1);
+        Task tsk7 = new Task(6,"Task7",LocalDate.of(2023,7,26),3);// creating objs
 
         List <Task> tasks = new ArrayList<Task>();
         tasks.add(tsk1);
@@ -42,20 +78,13 @@ public class Task implements Comparable<Task> {
         tasks.add(tsk4);
         tasks.add(tsk5);
         tasks.add(tsk6);
-        tasks.add(tsk7);
+        tasks.add(tsk7); // adding task to list
 
-        for(int i = 0 ; i< tasks.size() ; i++){
-            System.out.println((tasks.get(i)).toString());
+        printTasks(tasks); // printing each obj
 
-
-        }
         System.out.println("--------------------------------------------");
         Collections.sort(tasks);
-        for(int i = 0 ; i< tasks.size() ; i++){
-            System.out.println((tasks.get(i)).toString());
-
-
-        }
+        printTasks(tasks);
 
 
 
@@ -69,10 +98,5 @@ public class Task implements Comparable<Task> {
 
     }
 
-    @Override
-    public int compareTo(Task o) {
 
-        int i = this.deadline.compareTo(o.deadline);
-        return i;
-    }
 }
