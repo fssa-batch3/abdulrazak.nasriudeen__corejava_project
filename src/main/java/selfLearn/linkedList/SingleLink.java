@@ -27,10 +27,10 @@ public class SingleLink{
         System.out.print(x.x);
 
     }
-    public static Node createNodes(int n , Scanner scan){
-        Node head = new Node(8);
+    public static Node createNodes(int n , Scanner scan , int hea){
+        Node head = new Node(hea);
             Node temp = head ;
-        for(int i = 1 ; i<= n ; i++){
+        for(int i = 2 ; i<= n ; i++){
             System.out.println("Enter the node of " + i);
             int ab = scan.nextInt();
             Node x =  new Node(ab);
@@ -45,9 +45,13 @@ public class SingleLink{
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter the number of nodes  : ");
         int n = scan.nextInt();
-        Node head = createNodes(n,scan);
-        print(head);
+        System.out.println("Enter the head node ");
+        int x  = scan.nextInt();
 
+        Node head = createNodes(n,scan,x);
+
+        System.out.println("The created nodes are ");
+        print(head);
 }
 
 

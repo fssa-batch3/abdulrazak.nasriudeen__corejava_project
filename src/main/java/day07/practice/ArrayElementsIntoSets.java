@@ -18,6 +18,7 @@ public class ArrayElementsIntoSets {
         arr.add(10);
         arr.add(6);  arr.add(100);
         arr.add(5);
+        arr.add(1000);
 
         arr.add(10);
 
