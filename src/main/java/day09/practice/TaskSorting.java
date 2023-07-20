@@ -8,9 +8,6 @@ import java.util.Comparator;
 import java.util.List;
 
 class sortByPriority implements Comparator<Task> {
-
-
-
     @Override
     public int compare(Task o1, Task o2) {
         int com = o1.getDeadline().compareTo(o2.getDeadline());
