@@ -19,6 +19,9 @@ public class Task implements Comparable<Task> {
         this.deadline = dead;
         this.priority = prior;
     }
+    public Task(){
+
+    }
 
     @Override
     public String toString() {
