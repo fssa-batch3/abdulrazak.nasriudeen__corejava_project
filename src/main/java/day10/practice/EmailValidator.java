@@ -10,16 +10,29 @@ public class EmailValidator {
             // Also create the user defined exception mentioned in throws
 
 
-             return Pattern.matches(EMAIL_PATTERN, emailId);
+return Pattern.matches(EMAIL_PATTERN, emailId);
+}
+
+        public static void checkEmail(String mail) throws InvalidEmailException{
+            boolean chk =  isValidEmail(mail);
+            if(!chk){
+                throw new InvalidEmailException("Your email is not valid ");
+            } else{
+                System.out.print("Email is valid ");
+            }
         }
 
     public static void main(String[] args) {
+//            String email = "invalid_email@dom-ain";
+        String email = "abdulRazak123@gmail.com"; 
 
-            try{
+            try {
+                checkEmail(email);
+            }catch (InvalidEmailException e){
 
-            }catch (){
-                
+                System.out.println(e.getMessage());
             }
+
 
     }
     }

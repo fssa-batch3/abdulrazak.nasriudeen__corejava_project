@@ -1,6 +1,6 @@
-package day06.practice;
+package day06.practise;
 import java.util.ArrayList;
-import java.util.List;
+
 public class Task {
     String name ;
     int priority;
