@@ -8,7 +8,8 @@ import java.util.List;
 public class Task implements Comparable<Task> {
     private int id;
     private String name;
-    private String  deadline;
+    private LocalDate  deadline;
+    private String status;
 
     private int priority;
 
@@ -16,7 +17,15 @@ public class Task implements Comparable<Task> {
         this.id = id;
     }
 
-    public void setDeadline(String deadline) {
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
     }
 
@@ -28,18 +37,19 @@ public class Task implements Comparable<Task> {
         this.priority = priority;
     }
 
-    public Task(int id , String name , String dead , int prior ){
+    public Task(int id , String name , LocalDate dead , int prior ){
 
         this.id = id ;
         this.name = name;
         this.deadline = dead;
         this.priority = prior;
     }
-    public Task(int id , String name ,String dead ){
+    public Task(int id , String name ,LocalDate dead ,String sts ){
 
         this.id = id ;
         this.name = name;
         this.deadline = dead;
+        this.status = sts;
     }
     public Task(){
 
@@ -62,7 +72,7 @@ public class Task implements Comparable<Task> {
     public String getName() {
         return this.name;
     }
-    public String getDeadline(){
+    public LocalDate getDeadline(){
 
         return this.deadline;
     }
