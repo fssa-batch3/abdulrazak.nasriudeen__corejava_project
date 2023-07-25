@@ -27,7 +27,7 @@ public class UserInsertQuery {
       System.out.println("No of rows inserted :" + rows );
       ConnectionUtil.close(connection,stmt,null);
   }catch (Exception e ){
-      System.out.println("stmt");
+      System.out.println(e);
 
   }
     }
