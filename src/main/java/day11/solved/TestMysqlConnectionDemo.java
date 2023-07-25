@@ -17,7 +17,7 @@ public class TestMysqlConnectionDemo {
         Connection conn = DriverManager.
                 getConnection("jdbc:mysql://localhost:3306/project",
                         "root",
-                        "654321");
+                        "123456");
         System.out.println(conn);
 
     }
