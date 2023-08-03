@@ -2,6 +2,7 @@ package day07.practice;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Comparator;
 
 
 class Task{
@@ -27,6 +28,7 @@ public class TaskDuplicates {
         this.name = name;
         this.deadline = dead;
     }
+
     public static void main(String[]args){
         TaskDuplicates tsk1 = new TaskDuplicates(1,"Wish Someone","2023 12 1");
         TaskDuplicates tsk2 = new TaskDuplicates(2,"Wish Someone1","2023 12 1");
